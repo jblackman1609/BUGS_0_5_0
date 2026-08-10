@@ -1,0 +1,66 @@
+<Window x:Class="BUGS.AddNewContractWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BUGS"
+        mc:Ignorable="d"
+        Title="Add New Contract" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10">
+            <Label Content="Purchaser" HorizontalAlignment="Left" Margin="10,5"/>
+            <TextBox x:Name="Purchaser" 
+                Text="{Binding Purchaser}" 
+                Width="150" 
+                HorizontalAlignment="Left" 
+                Margin="10,0"/>
+
+            <Label Content="Phone" HorizontalAlignment="Left" Margin="10,5"/>
+            <TextBox x:Name="Phone" 
+                Text="{Binding Phone}"
+                Width="100" 
+                HorizontalAlignment="Left" 
+                Margin="10,0"/>
+
+            <Label Content="Email" HorizontalAlignment="Left" Margin="10,5"/>
+            <TextBox x:Name="Email" 
+                Text="{Binding Email}"
+                Width="150" 
+                HorizontalAlignment="Left" 
+                Margin="10,0"/>
+
+            <Label Content="Property Description" HorizontalAlignment="Left" Margin="10,5"/>
+            <ComboBox x:Name="PropDesc" 
+                        SelectedItem="{Binding SelectedDescription, Mode=TwoWay}"
+                        Width="100" HorizontalAlignment="Left"  Margin="10,0"/>
+
+            <Label Content="Bond Type" HorizontalAlignment="Left" Margin="10,5"/>
+            <ComboBox x:Name="BondTypes" 
+                        SelectedItem="{Binding SelectedBondType, Mode=TwoWay}"
+                        Width="100" HorizontalAlignment="Left" Margin="10,0"/>
+
+            <Label Content="Contract Price" HorizontalAlignment="Left" Margin="10,5"/>
+            <ComboBox x:Name="ContractPrice" 
+                        SelectedItem="{Binding SelectedContractPrice, Mode=TwoWay}"
+                        Width="100" HorizontalAlignment="Left" Margin="10,0"/>
+
+            <Label Content="Renewal Fee" HorizontalAlignment="Left" Margin="10,5"/>
+            <ComboBox x:Name="RenewalFees" 
+                        SelectedItem="{Binding SelectedRenewalFee, Mode=TwoWay}"
+                        Width="100" HorizontalAlignment="Left" Margin="10,0"/>
+
+            <Label Content="Transfer Fee" HorizontalAlignment="Left" Margin="10,5"/>
+            <ComboBox x:Name="TransferFees" 
+                        SelectedItem="{Binding SelectedTransferFee, Mode=TwoWay}"
+                        Width="100" HorizontalAlignment="Left" Margin="10,0"/>
+                                    
+        </StackPanel>
+        <StackPanel>
+            <Button Content="Submit" 
+                    HorizontalAlignment="Right" 
+                    Width="120" 
+                    Padding="5"
+                    Click="SubmitNewContract_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

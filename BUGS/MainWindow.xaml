@@ -1,0 +1,31 @@
+﻿<Window x:Class="BUGS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BUGS"
+        mc:Ignorable="d"
+        Title="Bradshaw Upload and Generate System (BUGS)" Height="450" Width="835">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Add New Contract" 
+                Grid.Row="0" 
+                HorizontalAlignment="Left" 
+                Width="120" 
+                Padding="5"
+                Click="AddNewContract_Click"/>
+        <DataGrid x:Name="ContractGrid" Grid.Row="1" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Purchaser" Binding="{Binding Purchaser}" IsReadOnly="True" Width="200"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding PropDescription}" IsReadOnly="True" Width="100"/>
+                <DataGridTextColumn Header="Bond" Binding="{Binding BondType}" Width="200"/>
+                <DataGridTextColumn Header="City" Binding="{Binding PropCity}" Width="100"/>
+                <DataGridTextColumn Header="Effective Date" Binding="{Binding EffectiveDate}" Width="100"/>
+                <DataGridTextColumn Header="Through Date" Binding="{Binding ThroughDate}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
