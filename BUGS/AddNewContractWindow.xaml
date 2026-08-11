@@ -5,62 +5,148 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BUGS"
         mc:Ignorable="d"
-        Title="Add New Contract" Height="450" Width="800">
+        Title="Add New Contract" Height="600" Width="600">
     <Grid>
-        <StackPanel Orientation="Vertical" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0">
             <Label Content="Purchaser" HorizontalAlignment="Left" Margin="10,5"/>
             <TextBox x:Name="Purchaser" 
                 Text="{Binding Purchaser}" 
                 Width="150" 
                 HorizontalAlignment="Left" 
                 Margin="10,0"/>
-
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1">
             <Label Content="Phone" HorizontalAlignment="Left" Margin="10,5"/>
             <TextBox x:Name="Phone" 
                 Text="{Binding Phone}"
-                Width="100" 
+                Width="150" 
                 HorizontalAlignment="Left" 
                 Margin="10,0"/>
-
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="2">
             <Label Content="Email" HorizontalAlignment="Left" Margin="10,5"/>
             <TextBox x:Name="Email" 
                 Text="{Binding Email}"
                 Width="150" 
                 HorizontalAlignment="Left" 
                 Margin="10,0"/>
+        </StackPanel>
 
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Label Content="CustStreetAdd" HorizontalAlignment="Left" Margin="10,5"/>
+            <TextBox x:Name="CustStreetAdd" 
+                Text="{Binding CustStreetAdd}"
+                Width="150" 
+                HorizontalAlignment="Left" 
+                Margin="10,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Content="PropStreetAdd" HorizontalAlignment="Left" Margin="10,5"/>
+            <TextBox x:Name="PropStreetAdd" 
+                Text="{Binding PropStreetAdd}"
+                Width="150" 
+                HorizontalAlignment="Left" 
+                Margin="10,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2">
             <Label Content="Property Description" HorizontalAlignment="Left" Margin="10,5"/>
             <ComboBox x:Name="PropDesc" 
-                        SelectedItem="{Binding SelectedDescription, Mode=TwoWay}"
-                        Width="100" HorizontalAlignment="Left"  Margin="10,0"/>
+                SelectedItem="{Binding SelectedDescription, Mode=TwoWay}"
+                Width="100" 
+                HorizontalAlignment="Left"  Margin="10,0"/>
+        </StackPanel>
 
-            <Label Content="Bond Type" HorizontalAlignment="Left" Margin="10,5"/>
-            <ComboBox x:Name="BondTypes" 
-                        SelectedItem="{Binding SelectedBondType, Mode=TwoWay}"
-                        Width="100" HorizontalAlignment="Left" Margin="10,0"/>
-
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <Label Content="CustCity" HorizontalAlignment="Left" Margin="10,5"/>
+            <TextBox x:Name="CustCity" 
+                Text="{Binding CustCity}"
+                Width="150" 
+                HorizontalAlignment="Left" 
+                Margin="10,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Label Content="PropCity" HorizontalAlignment="Left" Margin="10,5"/>
+            <TextBox x:Name="PropCity" 
+                Text="{Binding PropCity}"
+                Width="150" 
+                HorizontalAlignment="Left" 
+                Margin="10,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2">
             <Label Content="Contract Price" HorizontalAlignment="Left" Margin="10,5"/>
             <ComboBox x:Name="ContractPrice" 
-                        SelectedItem="{Binding SelectedContractPrice, Mode=TwoWay}"
-                        Width="100" HorizontalAlignment="Left" Margin="10,0"/>
+                SelectedItem="{Binding SelectedContractPrice, Mode=TwoWay}"
+                Width="100" HorizontalAlignment="Left" Margin="10,0"/>
+        </StackPanel>
 
+        <StackPanel Grid.Row="3" Grid.Column="0">
+            <Label Content="CustState" HorizontalAlignment="Left" Margin="10,5"/>
+            <TextBox x:Name="CustState"     
+                Text="{Binding CustState}"
+                Width="150" 
+                HorizontalAlignment="Left" 
+                Margin="10,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1">
+            <Label Content="PropState" HorizontalAlignment="Left" Margin="10,5"/>
+            <TextBox x:Name="PropState" 
+                Text="{Binding PropState}"
+                Width="150" 
+                HorizontalAlignment="Left" 
+                Margin="10,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="2">
             <Label Content="Renewal Fee" HorizontalAlignment="Left" Margin="10,5"/>
             <ComboBox x:Name="RenewalFees" 
-                        SelectedItem="{Binding SelectedRenewalFee, Mode=TwoWay}"
-                        Width="100" HorizontalAlignment="Left" Margin="10,0"/>
+                SelectedItem="{Binding SelectedRenewalFee, Mode=TwoWay}"
+                Width="100" HorizontalAlignment="Left" Margin="10,0"/>
+        </StackPanel>
 
+        <StackPanel Grid.Row="4" Grid.Column="0">
+            <Label Content="Bond Type" HorizontalAlignment="Left" Margin="10,5"/>
+            <ComboBox x:Name="BondTypes" 
+                SelectedItem="{Binding SelectedBondType, Mode=TwoWay}"
+                Width="100" HorizontalAlignment="Left" Margin="10,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="1">
+            <Label Content="PropZipCode" HorizontalAlignment="Left" Margin="10,5"/>
+            <TextBox x:Name="PropZipCode" 
+                Text="{Binding PropZipCode}"
+                Width="150" 
+                HorizontalAlignment="Left" 
+                Margin="10,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="2">
             <Label Content="Transfer Fee" HorizontalAlignment="Left" Margin="10,5"/>
             <ComboBox x:Name="TransferFees" 
-                        SelectedItem="{Binding SelectedTransferFee, Mode=TwoWay}"
-                        Width="100" HorizontalAlignment="Left" Margin="10,0"/>
-                                    
+                SelectedItem="{Binding SelectedTransferFee, Mode=TwoWay}"
+                Width="100" HorizontalAlignment="Left" Margin="10,0"/>
         </StackPanel>
-        <StackPanel>
-            <Button Content="Submit" 
-                    HorizontalAlignment="Right" 
-                    Width="120" 
-                    Padding="5"
-                    Click="SubmitNewContract_Click"/>
+
+        <StackPanel Grid.Row="5" Grid.Column="1">
+            <Button Content="Save" 
+            HorizontalAlignment="Center" 
+            Width="120" 
+            Padding="5"
+            Click="SaveContract_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2">
         </StackPanel>
     </Grid>
 </Window>

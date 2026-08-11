@@ -37,7 +37,7 @@ namespace BUGS
             ContractPrice.ItemsSource = viewModel.ContractPrices;
         }
 
-        private void SubmitNewContract_Click(object sender, RoutedEventArgs e)
+        private void SaveContract_Click(object sender, RoutedEventArgs e)
         {
            Contract contract = new Contract()
            {
@@ -56,16 +56,14 @@ namespace BUGS
                ContractPrice = viewModel.SelectedContractPrice,
                RenewalFee = viewModel.SelectedRenewalFee,
                TransferFee = viewModel.SelectedTransferFee
-           };
-
-           MessageBox.Show($"Contract: {contract.PropDescription} worked.");
-                
+           };       
 
            ContractService service = new ContractService();
            try
             {
                 service.AddContract(contract);
-                
+                MessageBox.Show($"Contract: {contract.PropDescription} worked.");
+                this.Close();
             }
 
             catch

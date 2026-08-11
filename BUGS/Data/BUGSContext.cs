@@ -15,7 +15,7 @@ namespace BUGS.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string dirPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string dirPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string dbPath = Path.Combine(dirPath, "BUGS.db");
             base.OnConfiguring(optionsBuilder.UseSqlite($"Data Source={dbPath}"));
         }

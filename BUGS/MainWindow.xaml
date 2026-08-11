@@ -11,12 +11,21 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Content="Add New Contract" 
-                Grid.Row="0" 
+        
+        <Button Content="Refresh" 
+                Grid.Row="0"
                 HorizontalAlignment="Left" 
                 Width="120" 
                 Padding="5"
+                Click="Refresh_Click"/>
+        
+        <Button Content="Add New Contract" 
+                Grid.Row="0" 
+                HorizontalAlignment="Right" 
+                Width="120" 
+                Padding="5"
                 Click="AddNewContract_Click"/>
+        
         <DataGrid x:Name="ContractGrid" Grid.Row="1" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Purchaser" Binding="{Binding Purchaser}" IsReadOnly="True" Width="200"/>

@@ -34,4 +34,11 @@ public partial class MainWindow : Window
         AddNewContractWindow window = new AddNewContractWindow();
         window.ShowDialog();
     }
+
+    private void Refresh_Click(object sender, RoutedEventArgs e)
+    {
+        MainWindow main = new MainWindow();
+        this.Close();
+        main.ShowDialog();        
+    }
 }
