@@ -5,26 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BUGS"
         mc:Ignorable="d"
-        Title="Bradshaw Upload and Generate System (BUGS)" Height="450" Width="835">
+        Title="Bradshaw Upload and Generate System (BUGS)" Height="450" Width="945">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <Button Content="Refresh" 
-                Grid.Row="0"
-                HorizontalAlignment="Left" 
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+            <Button Content="Refresh"  
                 Width="120" 
                 Padding="5"
+                Margin="5"
                 Click="Refresh_Click"/>
         
-        <Button Content="Add New Contract" 
-                Grid.Row="0" 
-                HorizontalAlignment="Right" 
+            <Button Content="Add New Contract" 
                 Width="120" 
                 Padding="5"
+                Margin="5"
                 Click="AddNewContract_Click"/>
+        </StackPanel>
+        
         
         <DataGrid x:Name="ContractGrid" Grid.Row="1" AutoGenerateColumns="False">
             <DataGrid.Columns>
@@ -34,6 +35,14 @@
                 <DataGridTextColumn Header="City" Binding="{Binding PropCity}" Width="100"/>
                 <DataGridTextColumn Header="Effective Date" Binding="{Binding EffectiveDate}" Width="100"/>
                 <DataGridTextColumn Header="Through Date" Binding="{Binding ThroughDate}" Width="100"/>
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Export" 
+                                Click="Export_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
