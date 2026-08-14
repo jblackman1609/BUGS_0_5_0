@@ -21,5 +21,12 @@ namespace BUGS.Models
         public string TransferFee { get; set; } = string.Empty;
         public int PurchaserId { get; set; }
         public Purchaser Purchaser { get; set; } = new();
+        public string Name { get; set; } = string.Empty;
+        public string Phone { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string PurchStreetAddress { get; set; } = string.Empty;
+        public string PurchCity { get; set; } = string.Empty;
+        public string PurchState { get; set; } = string.Empty;
+        public string PurchZipCode { get; set; } = string.Empty;
     }
 }
