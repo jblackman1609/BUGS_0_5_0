@@ -25,5 +25,15 @@ namespace BUGS.Services
 
             return view;
         }
+
+        public ContractViewModel AddNewContractView()
+        {
+            return new ContractViewModel();
+        }
+
+        public void SaveContractView(ContractViewModel viewModel)
+        {
+            
+        }
     }
 }

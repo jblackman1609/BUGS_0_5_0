@@ -6,13 +6,32 @@
         xmlns:local="clr-namespace:BUGS"
         mc:Ignorable="d"
         Title="Bradshaw Upload and Generate System (BUGS)" Height="450" Width="800">
-    <Grid>
-        <DataGrid x:Name="ContractDataGrid" AutoGenerateColumns="False" Margin="10" HeadersVisibility="Column">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+            <Button Content="Refresh"  
+                Width="120" 
+                Padding="5"
+                Margin="5"
+                Click="Refresh_Click"/>
+        
+            <Button Content="Add New Contract" 
+                Width="120" 
+                Padding="5"
+                Margin="5"
+                Click="AddNewContract_Click"/>
+        </StackPanel>
+
+        <DataGrid x:Name="ContractDataGrid" Grid.Row="1" AutoGenerateColumns="False" Margin="10" HeadersVisibility="Column">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Street Address" Binding="{Binding StreetAddress}" Width="150"/>
                 <DataGridTextColumn Header="City" Binding="{Binding City}" Width="100"/>
                 <DataGridTextColumn Header="Property Description" Binding="{Binding PropertyDesc}" Width="100"/>
-                <DataGridTextColumn Header="Effective Date" Binding="{Binding EffectiveDate}" Width="150"/>
+                <DataGridTextColumn Header="Effective Date" Binding="{Binding EffectiveDate}" Width="100"/>
                 <DataGridTextColumn Header="Through Date" Binding="{Binding ThroughDate}" Width="100"/>
                 <DataGridTextColumn Header="Renewal Fee" Binding="{Binding RenewalFee}" Width="100"/>
                 <DataGridTemplateColumn Header="Export" Width="50">

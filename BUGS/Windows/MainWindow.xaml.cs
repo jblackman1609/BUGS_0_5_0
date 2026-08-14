@@ -9,7 +9,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BUGS.Data;
+using BUGS.Models;
 using BUGS.Services;
+using BUGS.Windows;
 
 namespace BUGS;
 
@@ -32,10 +34,19 @@ public partial class MainWindow : Window
 
     private void AddNewContract_Click(object sender, RoutedEventArgs e)
     {
+        Window addNewContractWindow = new Window(); 
+        ContractViewModel viewModel = service.AddNewContractView();
+        addNewContractWindow.DataContext = viewModel;
         
+        addNewContractWindow.ShowDialog();
     }
 
     private void ExportWord_Click(object sender, RoutedEventArgs e)
+    {
+        
+    }
+
+    private void Refresh_Click(object sender, RoutedEventArgs e)
     {
         
     }
