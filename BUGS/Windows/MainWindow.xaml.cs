@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BUGS.Data;
+using BUGS.Services;
 
 namespace BUGS;
 
@@ -16,8 +18,25 @@ namespace BUGS;
 /// </summary>
 public partial class MainWindow : Window
 {
+    private readonly ContractGridService service;
+
     public MainWindow()
     {
         InitializeComponent();
+
+        BUGSContext context = new BUGSContext();
+        ContractRepository repo = new ContractRepository(context);
+        service = new ContractGridService(repo);        
+        ContractDataGrid.ItemsSource = service.GetContractGridView().Contracts;
+    }
+
+    private void AddNewContract_Click(object sender, RoutedEventArgs e)
+    {
+        
+    }
+
+    private void ExportWord_Click(object sender, RoutedEventArgs e)
+    {
+        
     }
 }

@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="Bradshaw Upload and Generate System (BUGS)" Height="450" Width="800">
     <Grid>
-
+        <DataGrid x:Name="ContractDataGrid" AutoGenerateColumns="False" Margin="10" HeadersVisibility="Column">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Street Address" Binding="{Binding StreetAddress}" Width="150"/>
+                <DataGridTextColumn Header="City" Binding="{Binding City}" Width="100"/>
+                <DataGridTextColumn Header="Property Description" Binding="{Binding PropertyDesc}" Width="100"/>
+                <DataGridTextColumn Header="Effective Date" Binding="{Binding EffectiveDate}" Width="150"/>
+                <DataGridTextColumn Header="Through Date" Binding="{Binding ThroughDate}" Width="100"/>
+                <DataGridTextColumn Header="Renewal Fee" Binding="{Binding RenewalFee}" Width="100"/>
+                <DataGridTemplateColumn Header="Export" Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Word"
+                                    Padding="5,2"
+                                    Click="ExportWord_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

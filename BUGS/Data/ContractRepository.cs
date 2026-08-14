@@ -15,6 +15,12 @@ namespace BUGS.Data
         public void AddContract(Contract contract)
         {
             _context.Contracts.Add(contract);
+            _context.SaveChanges();
+        }
+
+        public List<Contract> GetContracts()
+        {
+            return _context.Contracts.ToList();
         }
     }
 }
