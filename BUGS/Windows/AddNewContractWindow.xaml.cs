@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BUGS.Data;
+using BUGS.Models;
+using BUGS.Services;
 
 namespace BUGS.Windows
 {
@@ -20,9 +23,22 @@ namespace BUGS.Windows
     /// </summary>
     public partial class AddNewContractWindow : Window
     {
+        private readonly ContractViewModel viewModel;
+
         public AddNewContractWindow()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+           
+            BUGSContext context = new();
+            ContractRepository repo = new ContractRepository(context);
+            ContractGridService service = new ContractGridService(repo);
+
+            ContractViewModel viewModel = new();
+            viewModel = service.GetContractGridView();
+            DataContext = viewModel;
+
+            PropertyDesc.ItemsSource = viewModel.PropertyDescriptions;
+            
         }
 
         private void SaveContract_Click(object sender, RoutedEventArgs e)
