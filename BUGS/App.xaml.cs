@@ -13,8 +13,7 @@ namespace BUGS;
 /// </summary>
 public partial class App : Application
 {
-    [Required]
-    public IConfiguration Configuration { get; private set; }
+    public static IConfiguration? Configuration { get; private set; }
 
     public App()
     {
@@ -23,7 +22,10 @@ public partial class App : Application
         .AddJsonFile("appsettings.json", false, true);
 
         Configuration = builder.Build();
+    }
 
+    private void OnStartup(object sender, RoutedEventArgs e)
+    {
         MainWindow mainWindow = new();
         mainWindow.Show();
     }
