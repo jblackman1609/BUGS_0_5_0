@@ -1,17 +1,29 @@
 ﻿using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Windows;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using BUGS.Windows;
+using System.ComponentModel.DataAnnotations;
 
 namespace BUGS;
 
-/// <summary>
+/// <sumcmary>
 /// Interaction logic for App.xaml
 /// </summary>
 public partial class App : Application
 {
+    public IConfiguration? Configuration { get; private set; }
+
     public App()
     {
+        var builder = new ConfigurationBuilder()
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json", false, true);
+
+        Configuration = builder.Build();
+
         MainWindow mainWindow = new MainWindow();
         mainWindow.Show();
     }
