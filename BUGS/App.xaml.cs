@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Windows;
+using BUGS.Windows;
 
 namespace BUGS;
 
@@ -9,5 +10,10 @@ namespace BUGS;
 /// </summary>
 public partial class App : Application
 {
+    public App()
+    {
+        MainWindow mainWindow = new MainWindow();
+        mainWindow.Show();
+    }
 }
 
